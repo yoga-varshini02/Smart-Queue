@@ -1,0 +1,282 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f6f3;
+}
+
+/* ==============================
+   MAIN PAGE
+================================= */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #eef7f1, #dfeee5);
+  padding: 20px;
+}
+
+/* ==============================
+   MAIN BOX
+================================= */
+
+.login-box {
+  width: 380px;
+  padding: 40px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+  text-align: center;
+}
+
+.login-box h1 {
+  margin: 0 0 8px;
+  color: #176b3a;
+  font-size: 32px;
+}
+
+.login-box h2 {
+  color: #333;
+  margin-top: 25px;
+}
+
+.login-box p {
+  color: #666;
+}
+
+/* ==============================
+   INPUTS
+================================= */
+
+.login-box input {
+  width: 100%;
+  padding: 13px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.login-box input:focus {
+  border-color: #176b3a;
+  box-shadow: 0 0 0 2px rgba(23, 107, 58, 0.10);
+}
+
+/* ==============================
+   BUTTONS
+================================= */
+
+.login-box button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 12px;
+  background: #176b3a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.login-box button:hover {
+  background: #12572f;
+  transform: translateY(-1px);
+}
+
+/* ==============================
+   REGISTER LINK
+================================= */
+
+.register {
+  margin-top: 20px;
+  color: #176b3a !important;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ==============================
+   CUSTOMER DASHBOARD
+================================= */
+
+.login-box > div {
+  margin-top: 20px;
+}
+
+/* Token Number Card */
+
+.login-box > div h1 {
+  margin: 20px auto;
+  width: 170px;
+  height: 170px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e8f5ec;
+  color: #176b3a;
+
+  border: 6px solid #176b3a;
+  border-radius: 50%;
+
+  font-size: 58px;
+  font-weight: bold;
+
+  box-shadow: 0 5px 15px rgba(23, 107, 58, 0.15);
+}
+
+/* Status */
+
+.login-box > div p:nth-of-type(1) {
+  display: inline-block;
+  padding: 8px 18px;
+  margin: 5px 0 15px;
+
+  background: #fff3cd;
+  color: #856404;
+
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* Issue Date */
+
+.login-box > div p:nth-of-type(2) {
+  color: #777;
+  font-size: 14px;
+}
+
+/* People Ahead + Waiting Time */
+
+.login-box > div p:nth-of-type(3),
+.login-box > div p:nth-of-type(4) {
+  background: #f7f9f8;
+  border: 1px solid #e1e7e3;
+  border-radius: 10px;
+
+  padding: 14px;
+  margin: 10px 0;
+
+  color: #333;
+  font-size: 15px;
+}
+
+/* ==============================
+   MOBILE
+================================= */
+
+@media (max-width: 500px) {
+
+  .login-page {
+    padding: 15px;
+  }
+
+  .login-box {
+    width: 100%;
+    max-width: 380px;
+    padding: 30px 20px;
+  }
+
+  .login-box h1 {
+    font-size: 28px;
+  }
+
+  .login-box > div h1 {
+    width: 145px;
+    height: 145px;
+    font-size: 48px;
+  }
+}
+.smart-queue-title {
+  margin: 0 0 8px !important;
+  color: #176b3a !important;
+  font-family: Arial, sans-serif;
+  font-size: 58px !important;
+  font-weight: 400 !important;
+  line-height: 0.78 !important;
+  letter-spacing: -4px;
+}
+.queue-progress {
+  margin-top: 20px;
+}
+
+.token-card {
+  background: #176b3a;
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.token-card span {
+  font-size: 14px;
+}
+
+.token-card h1 {
+  margin: 8px 0 0;
+  font-size: 52px;
+}
+
+.queue-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.queue-status span,
+.info-item span {
+  color: #666;
+  font-size: 14px;
+}
+
+.status-waiting {
+  color: #d88a00;
+}
+
+.status-serving {
+  color: #176b3a;
+}
+
+.status-completed {
+  color: #555;
+}
+
+.queue-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 15px;
+  background: #f7f9f7;
+  border-radius: 10px;
+}
+
+.info-item strong {
+  color: #333;
+}
+
+.queue-progress-message {
+  margin-top: 15px;
+  padding: 12px;
+  background: #eef6f0;
+  color: #176b3a;
+  border-radius: 10px;
+  font-size: 14px;
+}
