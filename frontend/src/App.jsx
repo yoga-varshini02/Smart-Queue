@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
+
 function App() {
 
   // ==================================================
@@ -215,7 +217,7 @@ function App() {
 
       const response =
         await fetch(
-          'http://localhost:8080/api/login',
+          `${API_URL}/api/login`,
           {
             method: 'POST',
 
@@ -330,7 +332,7 @@ function App() {
 
             const tokenResponse =
               await fetch(
-                `http://localhost:8080/api/token/${savedTokenData.tokenNumber}/${result.id}`
+                `${API_URL}/api/token/${savedTokenData.tokenNumber}/${result.id}`
               )
 
 
@@ -356,7 +358,7 @@ function App() {
 
                 const peopleResponse =
                   await fetch(
-                    `http://localhost:8080/api/queue/people-ahead/${latestToken.tokenNumber}`
+                    `${API_URL}/api/queue/people-ahead/${latestToken.tokenNumber}`
                   )
 
 
@@ -436,7 +438,7 @@ function App() {
 
       const response =
         await fetch(
-          'http://localhost:8080/api/register',
+          `${API_URL}/api/register`,
           {
             method: 'POST',
 
@@ -524,7 +526,7 @@ function App() {
 
       const response =
         await fetch(
-          'http://localhost:8080/api/queue/waiting'
+          `${API_URL}/api/queue/waiting`
         )
 
 
@@ -557,7 +559,7 @@ function App() {
 
       const response =
         await fetch(
-          'http://localhost:8080/api/queue/serving'
+          `${API_URL}/api/queue/serving`
         )
 
 
@@ -594,7 +596,7 @@ function App() {
 
       const response =
         await fetch(
-          `http://localhost:8080/api/token/history/${currentUser.id}`
+          `${API_URL}/api/token/history/${currentUser.id}`
         )
 
 
@@ -639,7 +641,7 @@ function App() {
 
         const response =
           await fetch(
-            `http://localhost:8080/api/token/${tokenNumber}/status?status=${status}`,
+            `${API_URL}/api/token/${tokenNumber}/status?status=${status}`,
             {
               method: 'PUT'
             }
@@ -668,7 +670,7 @@ function App() {
 
             const updatedTokenResponse =
               await fetch(
-                `http://localhost:8080/api/token/${tokenNumber}/${currentUser.id}`
+                `${API_URL}/api/token/${tokenNumber}/${currentUser.id}`
               )
 
 
@@ -696,7 +698,7 @@ function App() {
 
                 const peopleResponse =
                   await fetch(
-                    `http://localhost:8080/api/queue/people-ahead/${tokenNumber}`
+                    `${API_URL}/api/queue/people-ahead/${tokenNumber}`
                   )
 
 
@@ -774,7 +776,7 @@ function App() {
 
       const response =
         await fetch(
-          'http://localhost:8080/api/token',
+          `${API_URL}/api/token`,
           {
             method: 'POST',
 
@@ -812,7 +814,7 @@ function App() {
 
       const peopleResponse =
         await fetch(
-          `http://localhost:8080/api/queue/people-ahead/${tokenData.tokenNumber}`
+          `${API_URL}/api/queue/people-ahead/${tokenData.tokenNumber}`
         )
 
 
@@ -881,7 +883,7 @@ function App() {
 
           const response =
             await fetch(
-              `http://localhost:8080/api/token/${token.tokenNumber}/${currentUser.id}`
+              `${API_URL}/api/token/${token.tokenNumber}/${currentUser.id}`
             )
 
 
@@ -909,7 +911,7 @@ function App() {
 
               const peopleResponse =
                 await fetch(
-                  `http://localhost:8080/api/queue/people-ahead/${updatedToken.tokenNumber}`
+                  `${API_URL}/api/queue/people-ahead/${updatedToken.tokenNumber}`
                 )
 
 
@@ -1674,6 +1676,7 @@ function App() {
     </div>
 
   )
+
 }
 
 export default App
